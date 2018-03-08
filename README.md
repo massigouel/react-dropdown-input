@@ -1,7 +1,7 @@
-[![npm package](https://img.shields.io/npm/v/react-dropdown-input.svg?style=flat-square)](https://www.npmjs.org/package/react-dropdown-input)
 
-React-Dropdown-Input
-====================
+
+Fork of React-Dropdown-Input by Lightspace Creative
+===================================================
 
 React-dropdown-input displays a "combobox" for [React](http://facebook.github.io/react/). 
 More explicitly, it shows a text input box; once the user starts to type, a dropdown menu

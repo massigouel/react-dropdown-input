@@ -23,7 +23,7 @@ var defaultMaxText = "+# more not shown";
 
 var defaultFilter = function defaultFilter(filterText, optionName) {
   // also optionIndex as third arg
-  return optionName.toLowerCase().indexOf(filterText.toLowerCase()) >= 0;
+  return optionName.toString().toLowerCase().indexOf(filterText.toString().toLowerCase()) >= 0;
 };
 
 var genLength = function genLength(list) {
@@ -38,9 +38,9 @@ var genGet = function genGet(list, i) {
 
 var caseInsensIndexOf = function caseInsensIndexOf(list, str) {
   var lowerList = list.map(function (item) {
-    return item.toLowerCase();
+    return item.toString().toLowerCase();
   });
-  return lowerList.indexOf(str.toLowerCase());
+  return lowerList.indexOf(str.toString().toLowerCase());
 };
 
 var DropdownInput = React.createClass({
@@ -144,11 +144,11 @@ var DropdownInput = React.createClass({
   },
 
   renderAsMenuItem: function renderAsMenuItem(item, index, options, disabled) {
-    var start = item.toLowerCase().indexOf(this.state.value.toLowerCase()),
+    var start = item.toString().toLowerCase().indexOf(this.state.value.toString().toLowerCase()),
         end = start + this.state.value.length,
-        part1 = item.slice(0, start),
-        part2 = item.slice(start, end),
-        part3 = item.slice(end);
+        part1 = item.toString().slice(0, start),
+        part2 = item.toString().slice(start, end),
+        part3 = item.toString().slice(end);
     var classes = cx({ active: this.state.activeIndex === index, disabled: disabled === true });
     if (disabled) {
       // don't highlight parts of disabled items, eg. the maxText
